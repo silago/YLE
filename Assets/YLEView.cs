@@ -1,12 +1,34 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class YLEView : MonoBehaviour
 {
-	public ScrollRect myScrollRect;
+	[SerializeField]
+	private ScrollRect myScrollRect;
 
-	private void Update()
+	public event Action OnBottomReached;
+	public event Action OnDataReceived;
+	public event Action<int> OnProgramRequest;
+	
+	private void Awake()
 	{
-		Debug.Log(myScrollRect.normalizedPosition);
+		myScrollRect.onValueChanged.AddListener(onRectValueChanged);
 	}
+
+	private void onRectValueChanged(Vector2 scrollPos)
+	{
+		if (scrollPos.y == 0)
+		{
+			if (OnBottomReached != null) OnBottomReached();
+		}
+	}
+
+	public void OnGetItems(Item item)
+	{
+		Debug.Log(item);
+	}
+
 }
+
