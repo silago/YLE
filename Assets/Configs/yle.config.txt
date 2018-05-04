@@ -1,0 +1,29 @@
+ Here are your personal keys to YLE API:
+
+app_id=824d9b11&app_key=7ef8436bf1ed2e77371d1f6d1131c557
+
+You must use these keys in every request to the API. You can test your brand new keys with this link: https://external.api.yle.fi/v1/programs/items.json?app_id=824d9b11&app_key=7ef8436bf1ed2e77371d1f6d1131c557
+
+Please note that it may take up to two minutes for keys to activate.
+
+In addition to these keys, you need the secret key below for decrypting media URLs:
+
+3717f7932898079c
+
+Do not share this key with anyone else.
+
+Please note that you can use the API only after you have accepted its terms of use:
+http://developer.yle.fi/static/terms-of-service.pdf
+
+Some additional remarks about the terms of use:
+
+    The terms of use are in development, just like the API itself. We will send information about updates to terms of use to this email address.
+    One of the upcoming additions is to require some additional care when displaying children's programs.
+    Commercial use is forbidden within these terms of use. Contact us (aleksi.rossi@yle.fi) if you have thoughts about commercial use.
+    API requests are rate limited to a maximum of 10 requests per second. Contact us if this becomes an issue.
+    Your application name may not contain "Yle". These practices are still under consideration.
+
+API documentation can be found from here The documentation site has a contact form which you can use to contact us in problem situations. We do not monitor the email address that this email has been sent from, so you shouldn't answer this email to ask questions.
+
+Have fun with the API!
+YLE API team 
