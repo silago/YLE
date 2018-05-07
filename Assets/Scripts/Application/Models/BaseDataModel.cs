@@ -1,4 +1,5 @@
 ﻿using SimpleJSON;
+using UnityEngine;
 
 public abstract class BaseDataModel
 {

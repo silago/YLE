@@ -15,6 +15,8 @@ namespace YLE.MVC.Model
         private string title { get; set; }
         private string description { get; set; }
         private string itemTitle { get; set; }
+        private string country { get; set; }
+        private string creator { get; set; }
 
         public string this[string index]
         {
@@ -28,6 +30,10 @@ namespace YLE.MVC.Model
                         return description;
                     case "itemTitle":
                         return itemTitle;
+                    case "country":
+                        return country;
+                    case "creator":
+                        return creator;
                     default:
                         return node[index];
                 }
@@ -42,9 +48,11 @@ namespace YLE.MVC.Model
         protected override void Load(JSONNode node)
         {
             this.node = node;
-            title = node["title"][BASE_LANG].ToString();
-            description = node["description"][BASE_LANG].ToString();
-            itemTitle = node["itemTitle"][BASE_LANG].ToString();
+            title = node["title"][BASE_LANG].ToString().Trim('"');
+            description = node["description"][BASE_LANG].ToString().Trim('"');
+            itemTitle = node["itemTitle"][BASE_LANG].ToString().Trim('"');
+            country = node["countryOfOrigin"].ToString().Trim('"');
+            creator = node["creator"]["name"].ToString().Trim('"');
         }
     }
 
